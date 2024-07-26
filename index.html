@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Matthew Meade</title>
+		
+		<link rel="stylesheet" href="./fonts/fonts.css" />
+		<link rel="stylesheet" href="./fonts/fontawesome.css" />
+		<link rel="stylesheet" href="./css/fa-ref.css" />
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="./resource/icon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./resource/icon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./resource/icon/favicon-16x16.png">
+		<link rel="mask-icon" href="./resource/icon/safari-pinned-tab.svg" color="#7F6BAE">
+		<link rel="manifest" href="./site.webmanifest">
+		<meta name="msapplication-TileColor" content="#603cba">
+		<meta name="theme-color" content="#ffffff">
+		
+		<!-- direct tags --> <style>
+			html {
+				font-size: 15px;
+			}
+			
+			body {
+				margin: 0;
+				font-family: Trirong, Georgia, serif;
+				color: white;
+				background-color: #0c0b0f;
+			}
+			
+			a {
+				text-decoration-style: dotted;
+				color: #82b1e3;
+			}
+			
+			a:hover {
+				text-decoration-style: solid;
+				color: #d5e5f6;
+			}
+			
+			main {
+				background-color: #3D3D43;
+				padding-bottom: 60px;
+			}
+			
+			header {
+				position: absolute;
+				z-index: 5;
+				width: 100%;
+				height: 100px;
+			}
+			
+			header.fixed-top {
+				position: fixed;
+			}
+			
+			header h1 {
+				width: 100%;
+				margin: 0;
+			}
+			
+			input:focus, input.form-control:focus {
+				outline: none !important;
+				outline-width: 0 !important;
+				-moz-box-shadow: none;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
+			
+			.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+				-moz-box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+				-webkit-box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+				box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+			}
+			
+			footer {
+				padding: 50px;
+				background: linear-gradient(#2f2d39 0%, #0c0b0f 100%);
+			}
+		</style>
+		
+		<!-- generic classes --> <style>
+			.container-padding {
+				padding-left: 150px;
+				padding-right: 150px;
+			}
+			
+			.sans-serif-font {
+				font-family: 'Istok Web', Verdana, sans-serif;
+			}
+			
+			.text-color-purple {
+				color: #6660d2;
+			}
+			
+			.nav-btn-dk-lrg,
+			.nav-btn-dk-sml {
+				border: 2px solid #6660d2;
+				border-radius: 30px;
+				text-transform: capitalize;
+				text-decoration: none;
+				color: white;
+				text-wrap: nowrap;
+			}
+			
+			.nav-btn-dk-lrg {
+				padding: 10px 20px;
+			}
+			
+			.nav-btn-dk-lrg:hover {
+				background-color: #443C54;
+				box-shadow: 0 0 10px #6660d2;
+			}
+			
+			.nav-btn-dk-sml {
+				padding: 8px 15px;
+			}
+			
+			.nav-btn-dk-sml:hover {
+				background-color: #443C54;
+				box-shadow: 0 0 5px #6660d2;
+			}
+			
+			.form-control::-webkit-search-cancel-button {
+				-webkit-appearance: none;
+			}
+		</style>
+		
+		<!-- container classes --> <style>
+			.container {
+				
+			}
+			
+			.viewport-container {
+				height: 100vh;
+			}
+			
+			.home-container {
+				position: relative;
+				height: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding-top: 100px;
+				padding-bottom: 185px;
+				box-sizing: border-box;
+				background: url("./resource/waving_hills_bg.svg") center bottom 80px/auto 105px repeat-x,
+					radial-gradient(ellipse closest-side, rgba(68,60,84,1) 0%, rgba(68,60,84,0) 100%),
+					linear-gradient(#0c0b0f 0%, #2f2d39 100%);
+			}
+			
+			.home-container::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				height: 105px;
+				width: 100%;
+				margin: 0 -150px;
+				background: url("./resource/waving_hills_fg.svg") center top/auto 105px repeat-x
+					#333238;
+			}
+			
+			.main-container {
+				
+			}
+			
+			.header-container {
+				height: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			
+			.foot-container {
+				display: flex;
+				flex-wrap: nowrap;
+				justify-content: space-around;
+				align-items: flex-start;
+				margin-bottom: 25px;
+			}
+		</style>
+		
+		<!-- navigation classes --> <style>
+			nav.main-nav {
+				width: 100%;
+				font-size: 1.6em;
+				margin-right: 20px;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+			
+			nav.main-nav a.nav-link {
+				padding: 10px;
+				margin: 0 20px;
+				text-transform: capitalize;
+				text-decoration: none;
+				color: #bbb;
+				text-wrap: nowrap;
+			}
+			
+			nav.main-nav a.nav-link .nav-item {
+				padding-top: 7px;
+				padding-bottom: 7px;
+				text-shadow: 0 0 2px #000;
+			}
+			
+			nav.main-nav a.nav-link .nav-item.nav-highlight {
+				padding-bottom: 2px;
+				color: white;
+				border-bottom: 5px solid #6660d2;
+			}
+			
+			nav.main-nav a.nav-button {
+				margin: 0 10px;
+			}
+			
+			nav.main-nav a.nav-link:hover {
+				color: white;
+			}
+		</style>
+		
+		<!-- home classes --> <style>
+			.home-intro {
+				width: 50%;
+				max-width: 800px;
+			}
+			
+			.home-intro > h1 {
+				margin: 0;
+				font-size: 5em;
+				line-height: 1.2em;
+			}
+			
+			.home-intro > hr {
+				width: 150px;
+				margin: 10px 0 20px;
+				border: 2px solid #6660d2;
+			}
+			
+			.home-intro > p {
+				color: #bbb;
+			}
+			
+			.home-intro .intro-subtitle {
+				font-size: 1.2em;
+			}
+			
+			.home-intro nav.intro-nav {
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+			
+			.home-intro nav.intro-nav a.nav-button,
+			.home-intro nav.intro-nav a.nav-icon {
+				display: block;
+				margin-right: 20px;
+			}
+			
+			.home-intro nav.intro-nav a.nav-button {
+				font-weight: bold;
+			}
+			
+			.home-intro nav.intro-nav a.nav-icon {
+				font-size: 1.8em;
+				margin-right: 10px;
+				padding: 10px;
+				text-decoration: none;
+				color: #bbb;
+			}
+			
+			.home-intro nav.intro-nav a.nav-icon:hover {
+				color: white;
+			}
+		</style>
+		
+		<!-- attrs-search classes --> <style>
+			.attrs-search-form {
+				padding: 0 20%;
+			}
+			
+			.attrs-search-form-container {
+				display: flex;
+				align-items: stretch;
+				width: 100%;
+				border: 2px solid #666;
+				background-color: #333;
+				border-radius: 20px;
+				overflow: hidden;
+			}
+			
+			.attrs-search-form-container:hover {
+                border-color: #777;
+            }
+			
+            .attrs-search-form-container:focus-within {
+                border-color: #6660d2;
+                border-radius: 10px;
+            }
+			
+			#attrs-search {
+                width: 100%;
+                padding: 10px 20px;
+                padding-left: 20px;
+                border: none;
+                background-color: transparent;
+                font-size: 1rem;
+				color: white;
+            }
+			
+			.attrs-search-form button {
+				display: none;
+				margin-left: -20px;
+				margin-right: 14px;
+				font-size: 1.5em;
+                background: none;
+				border: none;
+				color: #bbb;
+                cursor: pointer;
+				
+			}
+			
+			.attrs-search-form button:hover {
+				color: white;
+			}
+		</style>
+		
+		<!-- footer classes --> <style>
+			.foot-group {
+				margin-left: 150px;
+				margin-bottom: 25px;
+			}
+			
+			.foot-nav-group {
+				display: flex;
+				align-items: flex-start;
+				flex-shrink: 0;
+			}
+			
+			.foot-blog-group {
+				max-width: 50%;
+			}
+			
+			.foot-cat-logo {
+				position: relative;
+				margin-right: 25px;
+				margin-bottom: 50px;
+				flex-shrink: 0;
+			}
+			
+			.foot-cat-logo:after {
+				content: '';
+				position: absolute;
+				background: url("./resource/mickey_intro_dk.webp") no-repeat;
+				background-size: contain;
+				width: 150px;
+				height: 56px;
+				left: 0px;
+				bottom: -45px;
+			}
+			
+			.foot-cat-logo svg {
+				width: 125px;
+			}
+			
+			.foot-nav {
+				
+			}
+			
+			.foot-container h2 {
+				margin: 0;
+			}
+			
+			.foot-nav-group hr,
+			.foot-blog-group hr {
+				width: 50px;
+				margin: 5px 0;
+				border: 2px solid #6660d2;
+			}
+			
+			.foot-blog-group > p {
+				color: #bbb;
+			}
+			
+			nav.foot-nav > a,
+			.foot-nav-row > a.nav-button {
+				font-family: 'Istok Web', Verdana, sans-serif;
+			}
+			
+			nav.foot-nav .nav-link {
+				display: block;
+				font-size: 1.2em;
+				padding: 5px 0;
+				text-wrap: nowrap;
+			}
+			
+			.foot-nav-row {
+				display: flex;
+				margin-top: 10px;
+				align-items: center;
+			}
+			
+			.foot-nav-row > a.nav-button {
+				margin-right: 10px;
+				font-weight: bold;
+			}
+			
+			nav.foot-nav .nav-icon {
+				font-size: 1.8em;
+				margin-right: 10px;
+				padding: 5px;
+				text-decoration: none;
+				color: #bbb;
+			}
+			
+			nav.foot-nav .nav-icon:hover {
+				color: white;
+			}
+			
+			.blog-email-form {
+				width: 100%;
+				max-width: 480px;
+			}
+			
+			.blog-email-form-container {
+				display: flex;
+				align-items: stretch;
+				width: 100%;
+				border: 2px solid #777;
+				background-color: #222;
+				border-radius: 20px;
+				overflow: hidden;
+			}
+			
+			.blog-email-form-container:hover {
+                border-color: #999;
+            }
+			
+            .blog-email-form-container:focus-within {
+                border-color: #6660d2;
+                border-radius: 10px;
+            }
+			
+			#blog-email {
+                width: 100%;
+                padding: 10px;
+                padding-left: 20px;
+                border: none;
+                background-color: transparent;
+                font-size: 1rem;
+				color: white;
+            }
+			
+			.blog-email-form button {
+				border: none;
+                padding: 0 20px;
+                background-color: #49468E;
+				color: white;
+				font-size: 1.1em;
+				font-weight: bold;
+                border-radius: 0;
+                cursor: pointer;
+			}
+			
+			.blog-email-form button:hover {
+                background-color: #6660d2;
+			}
+			
+			.copy-notice {
+				margin-top: 25px;
+				color: #bbb;
+				text-align: center;
+			}
+		</style>
+		
+		<!-- media queries --> <style>
+			@media only screen and (max-width: 1800px) {
+				.foot-nav-group,
+				.foot-blog-group {
+					margin-left: 100px;
+				}
+			}
+			
+			@media only screen and (max-width: 1700px) {
+				.container-padding {
+					padding-left: 100px;
+					padding-right: 100px;
+				}
+				
+				.home-container::after {
+					margin-left: -100px;
+					margin-right: -100px;
+				}
+				
+				.foot-nav-group,
+				.foot-blog-group {
+					margin-left: 50px;
+				}
+				
+				.foot-blog-group {
+					max-width: none;
+				}
+			}
+			
+			@media only screen and (max-width: 1400px) {
+				.container-padding {
+					padding-left: 50px;
+					padding-right: 50px;
+				}
+				
+				.home-container::after {
+					margin-left: -50px;
+					margin-right: -50px;
+				}
+			}
+			
+			@media only screen and (max-width: 1200px) {
+				.foot-container {
+					flex-wrap: wrap;
+				}
+				
+				.foot-blog-group {
+					margin-left: 0;
+				}
+			}
+		</style>
+		
+    </head>
+    <body>
+		<div class="container">
+			<!-- figure out how scrolling works past a certain point (animation? background? glow?) -->
+			<div class="viewport-container">
+				<header>
+					<div class="header-container container-padding">
+						<!-- temporary - transition from larger h1 below. Will this link to homepage, somewhere else, or not at all? -->
+						<h1 style="width: 100%;">Matthew Meade<span class="text-color-purple">.</span></h1>
+						
+						<nav class="main-nav sans-serif-font">
+							<a class="nav-link" href="#">
+								<div class="nav-item nav-highlight">Home</div>
+							</a>
+							<a class="nav-link" href="#">
+								<div class="nav-item">About me</div>
+							</a>
+							<!-- link here, in about me, and in footer -->
+							<a class="nav-link" href="#">
+								<div class="nav-item">Portfolio</div>
+							</a>
+							<a class="nav-link" href="#">
+								<div class="nav-item">Blog</div>
+							</a>
+							<!-- link here, in about me, and in footer in its own column with various related links (socials, etc.) -->
+							<a class="nav-link" href="#">
+								<div class="nav-item">Contact me</div>
+							</a>
+							<a class="nav-button nav-btn-dk-lrg" href="#">Download CV</a>
+						</nav>
+					</div>
+				</header>
+				
+				<div class="home-container container-padding">
+					<div class="home-intro">
+						<div class="intro-subtitle">Hi, my name is</div>
+						<h1>Matthew Meade<span class="text-color-purple">.</span></h1>
+						<hr />
+						
+						<!-- very short description -->
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in odio aliquam,
+							finibus odio at, molestie lectus. Suspendisse venenatis nunc dui, id venenatis mauris
+							porttitor nec. Donec vestibulum est vel est finibus, eu placerat erat vestibulum.
+						</p>
+						
+						<nav class="intro-nav sans-serif-font">
+							<a class="nav-button nav-btn-dk-sml" href="#">About me</a>
+							<a class="nav-button nav-btn-dk-sml" href="#">My blog</a>
+							<a class="nav-icon fa-brands fa-linkedin" href="https://www.linkedin.com/in/matthew-meade-97a737b2/" target="_blank"></a>
+							<a class="nav-icon fa-brands fa-x-twitter" href="https://x.com/MatthewMeade4" target="_blank"></a>
+							<a class="nav-icon fa-brands fa-github" href="https://github.com/TitaN655" target="_blank"></a>
+						</nav>
+					</div>
+					
+					<!-- <div style="position:absolute;bottom: 125px;left:0;right:0;margin:0 auto;text-align:center;color:#bbb;"><em>Scroll for more.</em></div> -->
+				</div>
+			</div>
+			
+			<div class="main-container">
+				<main>
+					<div class="attrs-search-container container-padding">
+						<!-- cycle through - skills, qualities, attributes, characteristics -->
+						<h2 style="font-size: 2em;margin: 0 auto 0.5em;text-align: center;">What skills are you looking for?</h2>
+						
+						<!-- can enter more than one - each word is searched. See attrs-container comment -->
+						<form class="attrs-search-form" role="search">
+							<div class="attrs-search-form-container">
+								<input type="search" class="form-control sans-serif-font" id="attrs-search" placeholder="Try typing &quot;teamwork&quot; or &quot;SQL&quot;" aria-label="Search">
+								<button title="Clear" type="button"><i class="fa-solid fa-xmark"></i></button>
+							</div>
+						</form>
+					</div>
+					<!-- show 3-5 icons here of specialisations, core strengths, and primary technical skills -->
+					<!-- for example, software development, web technologies, APIs, problem solving skills, junior developer, aspirations? -->
+					
+					<div class="about-container container-padding">
+						
+					</div>
+					<div class="attrs-container container-padding">
+						<!-- show only a few (4, 6, or 8) strengths (most confident attributes), with a view more button at the bottom to expand the page with more attributes (ranked - show best first) -->
+						<!-- show a list of tags recognised from the search, minimum 2-3 characters -->
+					</div>
+				</main>
+			</div>
+		</div>
+		
+		<footer>
+			<div class="foot-container">
+				<div class="foot-cat-logo">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2600 2600">
+						<g fill="#fff">
+							<path d="M1174 2590 c-285 -29 -556 -155 -774 -359 -30 -28 -57 -51 -60 -51 -3 0 -79 29 -168 65 -89 36 -164 65 -167 65 -3 0 -5 -33 -5 -73 l0 -72 122 -49 c68 -27 125 -51 126 -52 2 -1 -9 -22 -26 -46 -16 -24 -39 -62 -51 -85 l-21 -43 -75 0 -75 0 0 -80 0 -80 40 0 39 0 -15 -42 c-59 -169 -75 -445 -35 -635 96 -458 411 -821 849 -977 261 -93 583 -93 844 0 638 227 997 892 833 1540 -14 54 -25 100 -25 101 0 2 16 3 35 3 l35 0 0 80 0 80 -70 0 c-61 0 -71 3 -83 23 -70 116 -87 146 -87 150 0 2 54 26 120 53 l120 49 0 72 c0 40 -2 73 -5 73 -3 0 -79 -29 -168 -65 l-164 -66 -69 66 c-132 125 -298 227 -472 289 -157 56 -382 83 -548 66z m401 -114 c105 -29 237 -84 319 -132 82 -49 236 -190 236 -215 0 -10 -95 -54 -295 -135 l-295 -119 0 -75 0 -75 335 -135 c304 -122 335 -137 329 -155 -3 -11 -5 -58 -3 -105 2 -47 4 -211 3 -365 0 -299 -8 -368 -47 -427 -19 -27 -30 -34 -64 -36 -49 -4 -34 -16 -340 276 l-202 193 -68 -8 c-87 -10 -279 -10 -366 0 l-68 8 -202 -193 c-306 -292 -291 -280 -340 -276 -52 4 -78 38 -98 130 -13 60 -19 464 -11 698 2 47 0 96 -3 110 -6 24 1 28 330 160 l335 135 0 75 0 75 -295 119 c-162 66 -295 124 -295 129 0 18 146 154 206 192 110 71 263 133 394 161 93 19 423 13 505 -10z m-1035 -531 l135 -54 -163 -1 -162 0 6 28 c9 35 32 82 42 82 4 0 68 -25 142 -55z m1695 3 c8 -28 15 -55 15 -60 0 -4 -73 -8 -162 -8 l-163 1 140 58 c77 32 143 59 147 60 4 0 14 -22 23 -51z m-1725 -287 c-91 -37 -168 -65 -172 -62 -4 3 -10 34 -14 69 l-7 62 179 0 179 -1 -165 -68z m1765 2 c-4 -32 -10 -63 -13 -69 -5 -6 -67 14 -172 58 l-165 67 179 1 178 0 -7 -57z"></path>
+							<path d="M1260 1869 c-33 -7 -80 -49 -80 -70 0 -21 59 -69 87 -71 78 -4 122 12 143 53 9 16 8 26 -4 44 -27 41 -83 58 -146 44z"></path>
+						</g>
+					</svg>
+					
+				</div>
+				
+				<div class="foot-group foot-nav-group">
+					<nav class="foot-nav" aria-labelledby="primary-navigation">
+						<h2 id="primary-navigation">What's next?</h2>
+						<hr />
+						<a class="nav-link" href="#">See my portfolio</a>
+						<a class="nav-link" href="#">Get in touch</a>
+						<div class="foot-nav-row">
+							<a class="nav-button nav-btn-dk-sml" href="#">Download CV</a>
+							<a class="nav-icon fa-brands fa-linkedin" href="https://www.linkedin.com/in/matthew-meade-97a737b2/" target="_blank"></a>
+							<a class="nav-icon fa-brands fa-x-twitter" href="https://x.com/MatthewMeade4" target="_blank"></a>
+							<a class="nav-icon fa-brands fa-github" href="https://github.com/TitaN655" target="_blank"></a>
+						</div>
+					</nav>
+				</div>
+				
+				<div class="foot-group foot-blog-group" aria-labelledby="blog-navigation">
+					<h2 id="blog-navigation">Read my blog.</h2>
+					<hr />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae mi a erat porttitor congue. 
+						Ut eleifend nibh at quam dignissim volutpat. Etiam eget urna euismod, volutpat tellus varius, congue tellus.
+					</p>
+					
+					<div class="foot-nav-row">
+						<a class="nav-button nav-btn-dk-sml" href="#">Take me there</a>
+						<form class="blog-email-form">
+							<div class="blog-email-form-container sans-serif-font">
+								<input type="email" class="form-control" id="blog-email" placeholder="jamie@example.com" aria-label="Search" required>
+								<button title="Subscribe" type="submit">Subscribe</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				
+			</div>
+			
+			<hr />
+			
+			<div class="copy-notice">Copyright &copy; 2024 <a href="#">Matthew Meade</a>. All rights reserved.</div>
+			<!-- <br /> NASA/JPL-Caltech/Harvard-Smithsonian CfA (2010) <i>Circle of Planetary Ashes (Artist's Concept)</i>. Available at: https://www.jpl.nasa.gov/images/pia13346-circle-of-planetary-ashes-artists-concept (Accessed: 15/07/2024). -->
+		</footer>
+    </body>
+</html>
