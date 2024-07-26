@@ -202,9 +202,8 @@
 			}
 			
 			nav.main-nav a.nav-link .nav-item {
-				padding-top: 7px;
-				padding-bottom: 7px;
-				text-shadow: 0 0 2px #000;
+				padding: 7px 0;
+				/* text-shadow: 0 0 2px #000; */
 			}
 			
 			nav.main-nav a.nav-link .nav-item.nav-highlight {
@@ -278,8 +277,9 @@
 		</style>
 		
 		<!-- attrs-search classes --> <style>
-			.attrs-search-form {
+			.attrs-search-container {
 				padding: 0 20%;
+				margin-bottom: 60px;
 			}
 			
 			.attrs-search-form-container {
@@ -325,6 +325,55 @@
 			
 			.attrs-search-form button:hover {
 				color: white;
+			}
+
+			ul.attrs-tag-list {
+				font-family: 'Istok Web', Verdana, sans-serif;
+				margin-bottom: 0;
+				padding: 0;
+			}
+
+			.attrs-search-tag {
+				display: inline-block;
+				margin-bottom: 8px;
+				padding: 4px 12px;
+				background-color: #067960;
+				border-radius: 15px;
+				color: white;
+				list-style: none;
+			}
+		</style>
+
+		<!-- about classes --> <style>
+			nav.abt-nav {
+				font-size: 1.3em;
+				border-bottom: 4px solid #333;
+				margin-bottom: 40px;
+			}
+
+			nav.abt-nav a.nav-link {
+				display: inline-block;
+				margin-bottom: -4px;
+				padding: 10px;
+				color: #bbb;
+				text-transform: capitalize;
+				text-decoration: none;
+				text-wrap: nowrap;
+			}
+
+			nav.abt-nav a.nav-link > .nav-item {
+				padding: 6px 12px;
+			}
+
+			nav.abt-nav a.nav-link > .nav-item.nav-highlight {
+				border: 1px solid #777;
+				border-radius: 10px;
+				box-shadow: 0 0 5px #222;
+			}
+
+			nav.abt-nav a.nav-link:has(> .nav-item.nav-highlight) {
+				color: white;
+				border-bottom: 4px solid #6660d2;
 			}
 		</style>
 		
@@ -575,37 +624,82 @@
 						</p>
 						
 						<nav class="intro-nav sans-serif-font">
-							<a class="nav-button nav-btn-dk-sml" href="#">About me</a>
-							<a class="nav-button nav-btn-dk-sml" href="#">My blog</a>
+							<a class="nav-button nav-btn-dk-sml" href="#">Learn more about me</a>
+							<a class="nav-button nav-btn-dk-sml" href="#">Read my blog</a>
 							<a class="nav-icon fa-brands fa-linkedin" href="https://www.linkedin.com/in/matthew-meade-97a737b2/" target="_blank"></a>
 							<a class="nav-icon fa-brands fa-x-twitter" href="https://x.com/MatthewMeade4" target="_blank"></a>
 							<a class="nav-icon fa-brands fa-github" href="https://github.com/TitaN655" target="_blank"></a>
 						</nav>
 					</div>
 					
+					<!-- design some kind of display, including ideal job-roles, current job roles, technical specialities, key information, current projects, recent blog posts -->
+
 					<!-- <div style="position:absolute;bottom: 125px;left:0;right:0;margin:0 auto;text-align:center;color:#bbb;"><em>Scroll for more.</em></div> -->
 				</div>
 			</div>
 			
 			<div class="main-container">
 				<main>
-					<div class="attrs-search-container container-padding">
+					<div class="attrs-search-container">
 						<!-- cycle through - skills, qualities, attributes, characteristics -->
-						<h2 style="font-size: 2em;margin: 0 auto 0.5em;text-align: center;">What skills are you looking for?</h2>
+						<h2 style="font-size: 2em;margin: 0 auto;text-align: center;">What skills are you looking for?</h2>
 						
-						<!-- can enter more than one - each word is searched. See attrs-container comment -->
+						<p style="margin-top: 0;color: #bbb;text-align: center;">
+							Am I a good fit for your role? Try searching some keywords below and see what I do for you.
+						</p>
+
+						<!-- can enter more than one - each word is searched. Recommend tags from partial matches (e.g. "prob" = "problem solving"), min 3 characters -->
+						<!-- what if a tag isn't found? display message? add as tag when there are not recommendations or matches, and search anyway? different coloured tag (red)? -->
+						<!-- how should mis-spellings be handled? -->
 						<form class="attrs-search-form" role="search">
 							<div class="attrs-search-form-container">
-								<input type="search" class="form-control sans-serif-font" id="attrs-search" placeholder="Try typing &quot;teamwork&quot; or &quot;SQL&quot;" aria-label="Search">
+								<input type="search" class="form-control sans-serif-font" id="attrs-search" aria-label="Search"
+									placeholder="Try typing in keywords like &quot;teamwork&quot;, &quot;organisation&quot;, &quot;Microsoft&quot; or &quot;SQL&quot;">
 								<button title="Clear" type="button"><i class="fa-solid fa-xmark"></i></button>
 							</div>
 						</form>
-					</div>
-					<!-- show 3-5 icons here of specialisations, core strengths, and primary technical skills -->
-					<!-- for example, software development, web technologies, APIs, problem solving skills, junior developer, aspirations? -->
-					
-					<div class="about-container container-padding">
 						
+						<ul class="attrs-tag-list" style="display: none;">
+							<li class="attrs-search-tag">teamwork</li>
+							<li class="attrs-search-tag">problem solving</li>
+							<li class="attrs-search-tag">communication</li>
+							<li class="attrs-search-tag">flexibility</li>
+							<li class="attrs-search-tag">accomodating</li>
+							<li class="attrs-search-tag">polite</li>
+							<li class="attrs-search-tag">trustworty</li>
+							<li class="attrs-search-tag">organisation</li>
+							<li class="attrs-search-tag">time management</li>
+							<li class="attrs-search-tag">independant</li>
+							<li class="attrs-search-tag">achievements</li>
+							<li class="attrs-search-tag">customer skills</li>
+						</ul>
+
+						<!-- show 3-5 icons here of specialisations, core strengths, and primary technical skills -->
+						<!-- for example, software development, web technologies, APIs, problem solving skills, junior developer, aspirations? -->
+						<!-- hide when the user is using the search box -->
+					</div>
+					
+					<div class="about-nav-container container-padding">
+						<!-- auto-switch to "Skills & qualities" when the user is using the search box -->
+						<nav class="abt-nav sans-serif-font">
+							<a class="nav-link" href="#">
+								<div class="nav-item nav-highlight">About me</div>
+							</a>
+							<a class="nav-link" href="#">
+								<div class="nav-item">Skills & qualities</div>
+							</a>
+							<a class="nav-link" href="#">
+								<div class="nav-item">Experience</div>
+							</a>
+							<a class="nav-link" href="#">
+								<div class="nav-item">Education</div>
+							</a>
+						</nav>
+					</div>
+
+					<div class="about-container container-padding">
+						<h2>About Me<span class="text-color-purple">.</span></h2>
+						<!-- list description about you, hobbies, achievements, pronouns, location, status tags, buttons for portfolio and contact -->
 					</div>
 					<div class="attrs-container container-padding">
 						<!-- show only a few (4, 6, or 8) strengths (most confident attributes), with a view more button at the bottom to expand the page with more attributes (ranked - show best first) -->
@@ -624,7 +718,6 @@
 							<path d="M1260 1869 c-33 -7 -80 -49 -80 -70 0 -21 59 -69 87 -71 78 -4 122 12 143 53 9 16 8 26 -4 44 -27 41 -83 58 -146 44z"></path>
 						</g>
 					</svg>
-					
 				</div>
 				
 				<div class="foot-group foot-nav-group">
