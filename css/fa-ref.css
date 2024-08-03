@@ -45,6 +45,10 @@
 	content: '\f09b';
 }
 
+.fa-microsoft::before {
+  content: '\f3ca';
+}
+
 .fa-xmark::before {
 	content: '\f00d';
 }
