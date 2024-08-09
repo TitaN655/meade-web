@@ -27,7 +27,7 @@
 				margin: 0;
 				font-family: Trirong, Georgia, serif;
 				color: white;
-				background-color: #4B4B54 /*#0c0b0f*/;
+				background-color: #0c0b0f;
 			}
 			
 			a {
@@ -56,26 +56,13 @@
 			main {
 				padding-top: 50px;
 				padding-bottom: 50px;
+				background-color: #4b4b54;
 			}
-			
-			header {
-				position: absolute;
-				z-index: 5;
-				width: 100%;
-				height: 100px;
-			}
-			
-			header.fixed-top {
-				position: fixed;
-				height: 80px;
-				background-color: rgb(47, 45, 57, 0.5);
-				font-size: 0.8em;
-			}
-			
+
 			header h1 {
 				width: 100%;
 				margin: 0;
-				font-size: 2em  /*2.5em*/;
+				font-size: 2em /*2.5em*/;
 			}
 			
 			input:focus, input.form-control:focus {
@@ -113,9 +100,9 @@
 		</style>
 		
 		<!-- generic classes --> <style>
-			.container-padding {
-				padding-left: 150px;
-				padding-right: 150px;
+			.general-wrapper {
+				max-width: 1280px;
+				margin: 0 auto;
 			}
 			
 			.sans-serif-font {
@@ -178,17 +165,21 @@
 		</style>
 		
 		<!-- container classes --> <style>
-			.container {
-				
+			.site-head-container {
+				position: absolute;
+				z-index: 5;
+				width: 100%;
+				height: 100px;
 			}
-			
-			.viewport-container {
-				height: 100vh;
-				min-height: 900px;
+
+			.site-head-container.fixed-top {
+				position: fixed;
+				height: 80px;
+				background-color: rgb(47, 45, 57, 0.5);
+				font-size: 0.8em;
 			}
-			
+
 			.home-container {
-				position: relative;
 				height: 100%;
 				display: flex;
 				justify-content: space-between;
@@ -196,48 +187,6 @@
 				padding-top: 100px;
 				padding-bottom: 185px;
 				box-sizing: border-box;
-				background-image:
-					radial-gradient(ellipse closest-side, rgba(68,60,84,1) 0%, rgba(68,60,84,0) 100%),
-					url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 134' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill='%233D3D43' d='M0 22L33 19C82 13 133 14 200 29C267 44 333 67 400 70C467 74 533 59 600 40C667 22 733 0 800 0C867 0 933 22 1000 29C1067 37 1133 29 1167 26L1200 22V134H1167C1133 134 1067 134 1000 134C933 134 867 134 800 134C733 134 667 134 600 134C533 134 467 134 400 134C333 134 267 134 200 134C133 134 67 134 33 134H0V22.332Z'/></svg>"),
-					linear-gradient(#0c0b0f 0%, #2f2d39 100%);
-				background-position: left top, left bottom 80px, left top;
-				background-repeat: repeat, repeat-x, repeat;
-				background-size: auto, auto 150px, auto;
-				/*
-				background: url("./resource/waving_hills_bg.svg") center bottom 80px/auto 105px repeat-x,
-					radial-gradient(ellipse closest-side, rgba(68,60,84,1) 0%, rgba(68,60,84,0) 100%),
-					linear-gradient(#0c0b0f 0%, #2f2d39 100%);
-				*/
-			}
-			
-			.home-container::after {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				height: 125px;
-				width: 100%;
-				margin: 0 -150px;
-				background-color: #3D3D43;
-				background-image:
-					url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 80' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill='%234B4B54' d='M0 13L33 11C82 8 133 8 200 17C267 26 333 40 400 42C467 44 533 35 600 24C667 13 733 0 800 0C867 0 933 13 1000 17C1067 22 1133 17 1167 15L1200 13V80H1167C1133 80 1067 80 1000 80C933 80 867 80 800 80C733 80 667 80 600 80C533 80 467 80 400 80C333 80 267 80 200 80C133 80 67 80 33 80H0V22.332Z'/></svg>");
-				background-position: left top;
-				background-repeat: repeat-x;
-				background-size: auto 150px;
-				/*
-				background: url("./resource/waving_hills_fg.svg") center top/auto 105px repeat-x
-					#333238;
-				*/
-			}
-			
-			.main-container {
-				
-			}
-			
-			.header-container {
-				height: 100%;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
 			}
 			
 			.foot-container {
@@ -249,7 +198,44 @@
 			}
 		</style>
 		
-		<!-- navigation classes --> <style>
+		<!-- site header classes --> <style>
+			header.head-expand-viewport {
+				height: 100vh;
+				min-height: 900px;
+			}
+
+			header.head-visuals {
+				background-image:
+					url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 134' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill='%233D3D43' d='M0 22L33 19C82 13 133 14 200 29C267 44 333 67 400 70C467 74 533 59 600 40C667 22 733 0 800 0C867 0 933 22 1000 29C1067 37 1133 29 1167 26L1200 22V134H1167C1133 134 1067 134 1000 134C933 134 867 134 800 134C733 134 667 134 600 134C533 134 467 134 400 134C333 134 267 134 200 134C133 134 67 134 33 134H0V22.332Z'/></svg>"),
+					radial-gradient(ellipse closest-side, rgba(68,60,84,1) 0%, rgba(68,60,84,0) 100%),
+					linear-gradient(#0c0b0f 0%, #2f2d39 100%);
+				background-position: left bottom 80px, left top, left top;
+				background-repeat: repeat-x, repeat, repeat;
+				background-size: auto 150px, auto, auto;
+			}
+
+			header.head-visuals::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				height: 8vw;
+				max-height: 125px;
+				width: 100%;
+				background-color: #3D3D43;
+				background-image:
+					url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 80' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill='%234B4B54' d='M0 13L33 11C82 8 133 8 200 17C267 26 333 40 400 42C467 44 533 35 600 24C667 13 733 0 800 0C867 0 933 13 1000 17C1067 22 1133 17 1167 15L1200 13V80H1167C1133 80 1067 80 1000 80C933 80 867 80 800 80C733 80 667 80 600 80C533 80 467 80 400 80C333 80 267 80 200 80C133 80 67 80 33 80H0V22.332Z'/></svg>");
+				background-position: left top;
+				background-repeat: repeat-x;
+				background-size: auto 150px;
+			}
+
+			.site-head {
+				height: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			
 			nav.main-nav {
 				width: 100%;
 				font-size: 1.4em;
@@ -261,7 +247,7 @@
 			
 			nav.main-nav a.nav-link {
 				padding: 10px;
-				margin: 0 20px;
+				margin: 0 10px;
 				text-transform: capitalize;
 				text-decoration: none;
 				color: #bbb;
@@ -365,11 +351,7 @@
 				display: flex;
 				justify-content: space-around;
 				align-items: stretch;
-				margin: 50px 0;
-				/*position: absolute;
-				left: 0;
-				right: 0;
-				margin-top: 100px;*/
+				margin: 25px auto 50px;
 			}
 
 			.attr-featured {
@@ -403,7 +385,6 @@
 		<!-- attrs-search classes --> <style>
 			.attrs-search-container {
 				min-width: 500px;
-				padding: 0 20%;
 				margin-bottom: 160px;
 			}
 			
@@ -738,6 +719,13 @@
 		</style>
 
 		<!-- media queries --> <style>
+			/* wide-screen */
+			@media only screen and (min-width: 1930px) {
+				.general-wrapper {
+					max-width: 1580px;
+				}
+			}
+
 			@media only screen and (max-width: 1800px) {
 				.foot-nav-group,
 				.foot-blog-group {
@@ -746,16 +734,6 @@
 			}
 			
 			@media only screen and (max-width: 1700px) {
-				.container-padding {
-					padding-left: 100px;
-					padding-right: 100px;
-				}
-				
-				.home-container::after {
-					margin-left: -100px;
-					margin-right: -100px;
-				}
-				
 				.foot-nav-group,
 				.foot-blog-group {
 					margin-left: 50px;
@@ -767,14 +745,8 @@
 			}
 			
 			@media only screen and (max-width: 1400px) {
-				.container-padding {
-					padding-left: 50px;
-					padding-right: 50px;
-				}
-				
-				.home-container::after {
-					margin-left: -50px;
-					margin-right: -50px;
+				.general-wrapper {
+					max-width: 1080px;
 				}
 			}
 			
@@ -791,74 +763,74 @@
 		
     </head>
     <body>
-		<div class="container">
-			<div class="viewport-container">
-				<!-- figure out how scrolling works past a certain point (animation? background? glow?) -->
-				<!-- affixed style done (<header class="fixed-top">) - make background blur behind -->
-				<header>
-					<div class="header-container container-padding">
-						<!-- temporary - transition from larger h1 below. Will this link to homepage, somewhere else, or not at all? -->
-						<h1>Matthew Meade<span class="text-color-purple">.</span></h1>
-						
-						<nav class="main-nav sans-serif-font">
-							<a class="nav-link" href="#">
-								<div class="nav-item nav-highlight">Home</div>
-							</a>
-							<a class="nav-link" href="#">
-								<div class="nav-item">About me</div>
-							</a>
-							<a class="nav-link" href="#">
-								<div class="nav-item">Portfolio</div>
-							</a>
-							<a class="nav-link" href="#">
-								<div class="nav-item">Blog</div>
-							</a>
-							<a class="nav-link" href="#">
-								<div class="nav-item">Contact me</div>
-							</a>
-							<a class="nav-button nav-btn-dk-lrg" href="#">Download CV</a>
-						</nav>
-					</div>
-				</header>
-				
-				<div class="home-container container-padding">
-					<div class="home-intro">
-						<hgroup>
-							<p>Hi, my name is</p>
-							<h1>Matthew Meade<span class="text-color-purple">.</span></h1>
-							<hr />
-							<h2 style="font-size: 1.2em;">Junior Developer of Digital Products &amp; Services<span class="text-color-purple">.</span></h2>
-						</hgroup>
-						
-						<!-- very short description -->
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in odio aliquam,
-							finibus odio at, molestie lectus. Suspendisse venenatis nunc dui, id venenatis mauris
-							porttitor nec. Donec vestibulum est vel est finibus, eu placerat erat vestibulum.
-						</p>
-						
-						<nav class="intro-nav sans-serif-font">
-							<a class="nav-button nav-btn-dk-sml" href="#">Learn more about me</a>
-							<a class="nav-button nav-btn-dk-sml" href="#">Read my blog</a>
-							<a class="nav-icon fa-brands fa-linkedin" href="https://www.linkedin.com/in/matthew-meade-97a737b2/" target="_blank"></a>
-							<a class="nav-icon fa-brands fa-x-twitter" href="https://x.com/MatthewMeade4" target="_blank"></a>
-							<a class="nav-icon fa-brands fa-github" href="https://github.com/TitaN655" target="_blank"></a>
-						</nav>
-					</div>
+		<header class="head-visuals head-expand-viewport">
+			<!-- figure out how scrolling works past a certain point (animation? background? glow?) -->
+			<!-- affixed style done (<header class="fixed-top">) - make background blur behind -->
+			<div class="site-head-container">
+				<div class="site-head general-wrapper">
+					<!-- temporary - transition from larger h1 below. Will this link to homepage, somewhere else, or not at all? -->
+					<h1>Matthew Meade<span class="text-color-purple">.</span></h1>
 					
-					<!-- design some kind of display, including ideal job-roles, current job roles, technical specialities, key information, current projects, recent blog posts -->
-
-					<!--
-					<div class="home-scroll-attention anim-bounce1">
-						<p>What skills are you looking for?</p>
-						<i class="fa-solid fa-chevron-down"></i>
-					</div>
-					-->
+					<nav class="main-nav sans-serif-font">
+						<a class="nav-link" href="#">
+							<div class="nav-item nav-highlight">Home</div>
+						</a>
+						<a class="nav-link" href="#">
+							<div class="nav-item">About me</div>
+						</a>
+						<a class="nav-link" href="#">
+							<div class="nav-item">Portfolio</div>
+						</a>
+						<a class="nav-link" href="#">
+							<div class="nav-item">Blog</div>
+						</a>
+						<a class="nav-link" href="#">
+							<div class="nav-item">Contact me</div>
+						</a>
+						<a class="nav-button nav-btn-dk-lrg" href="#">Download CV</a>
+					</nav>
 				</div>
 			</div>
-			
-			<div class="main-container">
-				<div class="attrs-featured-container container-padding">
+				
+			<div class="home-container general-wrapper">
+				<div class="home-intro">
+					<hgroup>
+						<p>Hi, my name is</p>
+						<h1>Matthew Meade<span class="text-color-purple">.</span></h1>
+						<hr />
+						<h2 style="font-size: 1.2em;">Junior Developer of Digital Products &amp; Services<span class="text-color-purple">.</span></h2>
+					</hgroup>
+					
+					<!-- very short description -->
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in odio aliquam,
+						finibus odio at, molestie lectus.
+					</p>
+					
+					<nav class="intro-nav sans-serif-font">
+						<a class="nav-button nav-btn-dk-sml" href="#">Learn more about me</a>
+						<a class="nav-button nav-btn-dk-sml" href="#">Read my blog</a>
+						<a class="nav-icon fa-brands fa-linkedin" href="https://www.linkedin.com/in/matthew-meade-97a737b2/" target="_blank"></a>
+						<!-- <a class="nav-icon fa-brands fa-x-twitter" href="https://x.com/MatthewMeade4" target="_blank"></a> -->
+						<a class="nav-icon fa-brands fa-github" href="https://github.com/TitaN655" target="_blank"></a>
+					</nav>
+				</div>
+				
+				<!-- design some kind of display, including ideal job-roles, current job roles, technical specialities, key information, current projects, recent blog posts -->
+
+				<!--
+				<div class="home-scroll-attention anim-bounce1">
+					<p>What skills are you looking for?</p>
+					<i class="fa-solid fa-chevron-down"></i>
+				</div>
+				-->
+			</div>
+		</header>
+		
+		<main>
+			<div class="general-wrapper">
+				
+				<div class="attrs-featured-container">
 					<div class="attr-featured fade-in-down">
 						<hgroup>
 							<i class="attr-icon fa-brands fa-microsoft"></i>
@@ -901,126 +873,124 @@
 					</div>
 				</div>
 
-				<main>
-					<div class="about-nav-container container-padding" style="display: none">
-						<!-- auto-switch to "Skills & qualities" when the user is using the search box -->
-						<nav class="abt-nav sans-serif-font">
-							<a class="nav-link" href="#">
-								<div class="nav-item nav-highlight">About me</div>
-							</a>
-							<a class="nav-link" href="#">
-								<div class="nav-item">Skills & qualities</div>
-							</a>
-							<a class="nav-link" href="#">
-								<div class="nav-item">Experience</div>
-							</a>
-							<a class="nav-link" href="#">
-								<div class="nav-item">Education</div>
-							</a>
-						</nav>
-					</div>
+				<div class="about-nav-container" style="display: none">
+					<!-- auto-switch to "Skills & qualities" when the user is using the search box -->
+					<nav class="abt-nav sans-serif-font">
+						<a class="nav-link" href="#">
+							<div class="nav-item nav-highlight">About me</div>
+						</a>
+						<a class="nav-link" href="#">
+							<div class="nav-item">Skills & qualities</div>
+						</a>
+						<a class="nav-link" href="#">
+							<div class="nav-item">Experience</div>
+						</a>
+						<a class="nav-link" href="#">
+							<div class="nav-item">Education</div>
+						</a>
+					</nav>
+				</div>
 
-					<div class="about-container container-padding" style="padding-bottom: 20px;">
-						<div style="border: 2px solid #777; float: left;height: 800px;width: 500px;box-sizing: border-box;margin-right: 100px;"></div>
-						
-						<hgroup>
-							<h1>About me<span class="text-color-purple">.</span></h1>
-							<hr />
+				<div class="about-container" style="padding-bottom: 20px;">
+					<div style="border: 2px solid #777; float: left;height: 800px;width: 500px;box-sizing: border-box;margin-right: 100px;"></div>
+					
+					<hgroup>
+						<h1>About me<span class="text-color-purple">.</span></h1>
+						<hr />
 
-							<!-- start with a row of short, quick descriptors -->
-							<h2 style="font-size: 1.2em;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu fringilla enim.</h2>
-						</hgroup>
-						
-						<!-- pronouns (He/Him), location (East Sussex, GB), status tags (ready to start (orange), student, junior developer) -->
-						
-						<!-- description about you, hobbies, achievements -->
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu fringilla enim.
-							Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-							Proin nec ligula vitae elit imperdiet rutrum. Cras felis lectus, imperdiet ut nulla at,
-							pellentesque congue ante. Phasellus facilisis lectus in vulputate vestibulum.
-							Integer augue ligula, ullamcorper cursus pharetra ut, dictum vitae diam. Sed eu interdum nulla.
-						</p>
+						<!-- start with a row of short, quick descriptors -->
+						<h2 style="font-size: 1.2em;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu fringilla enim.</h2>
+					</hgroup>
+					
+					<!-- pronouns (He/Him), location (East Sussex, GB), status tags (ready to start (orange), student, junior developer) -->
+					
+					<!-- description about you, hobbies, achievements -->
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu fringilla enim.
+						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+						Proin nec ligula vitae elit imperdiet rutrum. Cras felis lectus, imperdiet ut nulla at,
+						pellentesque congue ante. Phasellus facilisis lectus in vulputate vestibulum.
+						Integer augue ligula, ullamcorper cursus pharetra ut, dictum vitae diam. Sed eu interdum nulla.
+					</p>
 
-						<h2>So, what interests me?</h2>
+					<h2>So, what interests me?</h2>
 
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu fringilla enim.
-							Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-							Proin nec ligula vitae elit imperdiet rutrum. Cras felis lectus, imperdiet ut nulla at,
-							pellentesque congue ante. Phasellus facilisis lectus in vulputate vestibulum.
-							Integer augue ligula, ullamcorper cursus pharetra ut, dictum vitae diam. Sed eu interdum nulla.
-						</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu fringilla enim.
+						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+						Proin nec ligula vitae elit imperdiet rutrum. Cras felis lectus, imperdiet ut nulla at,
+						pellentesque congue ante. Phasellus facilisis lectus in vulputate vestibulum.
+						Integer augue ligula, ullamcorper cursus pharetra ut, dictum vitae diam. Sed eu interdum nulla.
+					</p>
 
-						<h2>What experience do I have?</h2>
+					<h2>What experience do I have?</h2>
 
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu fringilla enim.
-							Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-							Proin nec ligula vitae elit imperdiet rutrum. Cras felis lectus, imperdiet ut nulla at,
-							pellentesque congue ante. Phasellus facilisis lectus in vulputate vestibulum.
-							Integer augue ligula, ullamcorper cursus pharetra ut, dictum vitae diam. Sed eu interdum nulla.
-						</p>
-						
-						<h2>How about my education?</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu fringilla enim.
+						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+						Proin nec ligula vitae elit imperdiet rutrum. Cras felis lectus, imperdiet ut nulla at,
+						pellentesque congue ante. Phasellus facilisis lectus in vulputate vestibulum.
+						Integer augue ligula, ullamcorper cursus pharetra ut, dictum vitae diam. Sed eu interdum nulla.
+					</p>
+					
+					<h2>How about my education?</h2>
 
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu fringilla enim.
-							Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-							Proin nec ligula vitae elit imperdiet rutrum. Cras felis lectus, imperdiet ut nulla at,
-							pellentesque congue ante. Phasellus facilisis lectus in vulputate vestibulum.
-							Integer augue ligula, ullamcorper cursus pharetra ut, dictum vitae diam. Sed eu interdum nulla.
-						</p>
-						
-						<!-- buttons for portfolio and contact -->
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu fringilla enim.
+						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+						Proin nec ligula vitae elit imperdiet rutrum. Cras felis lectus, imperdiet ut nulla at,
+						pellentesque congue ante. Phasellus facilisis lectus in vulputate vestibulum.
+						Integer augue ligula, ullamcorper cursus pharetra ut, dictum vitae diam. Sed eu interdum nulla.
+					</p>
+					
+					<!-- buttons for portfolio and contact -->
 
-					</div>
+				</div>
 
-					<div class="attrs-search-container">
-						<!-- cycle through - skills, qualities, attributes, characteristics -->
-						<h2 style="font-size: 2.5em;margin: 0 auto;text-align: center;">What skills are you looking for?</h2>
-						
-						<p style="margin-top: 0;margin-bottom: 20px;color: #bbb;text-align: center;">
-							Am I a good fit for your role? Try searching some keywords below to see what I can do for you.
-						</p>
+				<div class="attrs-search-container">
+					<!-- cycle through - skills, qualities, attributes, characteristics -->
+					<h2 style="font-size: 2.5em;margin: 0 auto;text-align: center;">What skills are you looking for?</h2>
+					
+					<p style="margin-top: 0;margin-bottom: 20px;color: #bbb;text-align: center;">
+						Am I a good fit for your role? Try searching some keywords below to see what I can do for you.
+					</p>
 
-						<!-- can enter more than one - each word is searched. Recommend tags from partial matches (e.g. "prob" = "problem solving"), min 3 characters -->
-						<!-- what if a tag isn't found? display message? add as tag when there are not recommendations or matches, and search anyway? different coloured tag (red)? -->
-						<!-- how should mis-spellings be handled? -->
-						<form class="attrs-search-form" role="search">
-							<div class="attrs-search-form-container">
-								<input type="search" class="form-control sans-serif-font" id="attrs-search" aria-label="Search"
-									placeholder="Try typing in keywords like &quot;teamwork&quot;, &quot;organisation&quot;, &quot;Microsoft&quot; or &quot;SQL&quot;">
-								<button title="Clear" type="button"><i class="fa-solid fa-xmark"></i></button>
-							</div>
-						</form>
-						
-						<ul class="attrs-tag-list" style="display: none;">
-							<li class="attrs-search-tag">teamwork</li>
-							<li class="attrs-search-tag">problem solving</li>
-							<li class="attrs-search-tag">communication</li>
-							<li class="attrs-search-tag">flexibility</li>
-							<li class="attrs-search-tag">accomodating</li>
-							<li class="attrs-search-tag">polite</li>
-							<li class="attrs-search-tag">trustworty</li>
-							<li class="attrs-search-tag">organisation</li>
-							<li class="attrs-search-tag">time management</li>
-							<li class="attrs-search-tag">independant</li>
-							<li class="attrs-search-tag">achievements</li>
-							<li class="attrs-search-tag">customer skills</li>
-						</ul>
+					<!-- can enter more than one - each word is searched. Recommend tags from partial matches (e.g. "prob" = "problem solving"), min 3 characters -->
+					<!-- what if a tag isn't found? display message? add as tag when there are not recommendations or matches, and search anyway? different coloured tag (red)? -->
+					<!-- how should mis-spellings be handled? -->
+					<form class="attrs-search-form" role="search">
+						<div class="attrs-search-form-container">
+							<input type="search" class="form-control sans-serif-font" id="attrs-search" aria-label="Search"
+								placeholder="Try typing in keywords like &quot;teamwork&quot;, &quot;organisation&quot;, &quot;Microsoft&quot; or &quot;SQL&quot;">
+							<button title="Clear" type="button"><i class="fa-solid fa-xmark"></i></button>
+						</div>
+					</form>
+					
+					<ul class="attrs-tag-list" style="display: none;">
+						<li class="attrs-search-tag">teamwork</li>
+						<li class="attrs-search-tag">problem solving</li>
+						<li class="attrs-search-tag">communication</li>
+						<li class="attrs-search-tag">flexibility</li>
+						<li class="attrs-search-tag">accomodating</li>
+						<li class="attrs-search-tag">polite</li>
+						<li class="attrs-search-tag">trustworty</li>
+						<li class="attrs-search-tag">organisation</li>
+						<li class="attrs-search-tag">time management</li>
+						<li class="attrs-search-tag">independant</li>
+						<li class="attrs-search-tag">achievements</li>
+						<li class="attrs-search-tag">customer skills</li>
+					</ul>
 
-						<!-- show 3-5 icons here of specialisations, core strengths, and primary technical skills -->
-						<!-- for example, software development, web technologies, APIs, problem solving skills, junior developer, aspirations? -->
-						<!-- hide when the user is using the search box -->
-					</div>
-					<div class="attrs-container container-padding">
-						<!-- show only a few (4, 6, or 8) strengths (most confident attributes), with a view more button at the bottom to expand the page with more attributes (ranked - show best first) -->
-						<!-- show a list of tags recognised from the search, minimum 2-3 characters -->
-					</div>
-				</main>
+					<!-- show 3-5 icons here of specialisations, core strengths, and primary technical skills -->
+					<!-- for example, software development, web technologies, APIs, problem solving skills, junior developer, aspirations? -->
+					<!-- hide when the user is using the search box -->
+				</div>
+				<div class="attrs-container">
+					<!-- show only a few (4, 6, or 8) strengths (most confident attributes), with a view more button at the bottom to expand the page with more attributes (ranked - show best first) -->
+					<!-- show a list of tags recognised from the search, minimum 2-3 characters -->
+				</div>
 			</div>
-		</div>
+		</main>
 		
 		<footer>
 			<div class="foot-container">
