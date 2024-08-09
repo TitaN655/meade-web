@@ -430,22 +430,40 @@ nav.abt-nav a.nav-link:has(> .nav-item.nav-highlight) {
 }
 
 .attrs-search-container {
+    position: relative;
     min-width: 500px;
-    margin-bottom: 160px;
+    background-color: #3d3d43;
+}
+
+.attrs-search {
+    padding: 40px 0;
+}
+
+.attrs-search h2 {
+    margin: 0 auto;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.attrs-search p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #bbb;
+    text-align: center;
 }
 
 .attrs-search-form-container {
     display: flex;
     align-items: stretch;
     width: 100%;
-    border: 2px solid #666;
+    border: 2px solid #777;
     background-color: #333;
     border-radius: 20px;
     overflow: hidden;
 }
 
 .attrs-search-form-container:hover {
-    border-color: #777;
+    border-color: #999;
 }
 
 .attrs-search-form-container:focus-within {
@@ -453,7 +471,7 @@ nav.abt-nav a.nav-link:has(> .nav-item.nav-highlight) {
     border-radius: 10px;
 }
 
-#attrs-search {
+#attrs-search-input {
     width: 100%;
     padding: 10px 20px;
     padding-left: 20px;
@@ -493,6 +511,10 @@ nav.abt-nav a.nav-link:has(> .nav-item.nav-highlight) {
     border-radius: 15px;
     color: white;
     list-style: none;
+}
+
+.attrs-container {
+    margin-bottom: 50px;
 }
 
 /* footer */
