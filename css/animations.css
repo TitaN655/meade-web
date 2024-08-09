@@ -1,0 +1,59 @@
+.anim-reveal-bounce {
+    opacity: 1;
+    transform: translateY(0);
+    animation: reveal-bounce 1s ease;
+}
+@keyframes reveal-bounce {
+    0% {transform: translateY(100%);}
+    20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10%);}
+    60% {transform: translateY(-5%);}
+}
+/*
+@keyframes reveal-bounce {
+    0% {transform: translateY(0);}
+    20%, 50%, 80%, 100% {transform: translateY(-100%);}
+    40% {transform: translateY(-110%);}
+    60% {transform: translateY(-105%);}
+}
+*/
+
+/* animation by Nelle de Jones - https://codepen.io/nelledejones/ */
+.fade-in-down {
+    opacity: 1;
+    animation: fade-in-down 1s ease;
+}
+@keyframes fade-in-down {
+0% {
+    opacity: 0;
+    transform: translateY(20px);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+/* animation by Nelle de Jones - https://codepen.io/nelledejones/ */
+.anim-bounce1 {
+    animation: bounce 2s ease infinite;
+}
+@keyframes bounce {
+    70% { transform:translateY(0%); }
+    80% { transform:translateY(-15%); }
+    90% { transform:translateY(0%); }
+    95% { transform:translateY(-7%); }
+    97% { transform:translateY(0%); }
+    99% { transform:translateY(-3%); }
+    100% { transform:translateY(0); }
+}
+
+/* animation by Nelle de Jones - https://codepen.io/nelledejones/ */
+.anim-bounce2 {
+    animation: bounce2 2s ease infinite;
+}
+@keyframes bounce2 {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}

@@ -1,0 +1,40 @@
+/* wide-screen */
+@media only screen and (min-width: 1930px) {
+    .general-wrapper {
+        max-width: 1580px;
+    }
+}
+
+@media only screen and (max-width: 1800px) {
+    .foot-nav-group,
+    .foot-blog-group {
+        margin-left: 100px;
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+    .foot-nav-group,
+    .foot-blog-group {
+        margin-left: 50px;
+    }
+    
+    .foot-blog-group {
+        max-width: none;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .general-wrapper {
+        max-width: 1080px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .foot-container {
+        flex-wrap: wrap;
+    }
+    
+    .foot-blog-group {
+        margin-left: 0;
+    }
+}
