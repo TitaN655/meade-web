@@ -25,12 +25,10 @@
     </head>
     <body>
 		<header class="head-visuals head-expand-viewport">
-			<!-- figure out how scrolling works past a certain point (animation? background? glow?) -->
-			<!-- affixed style done (<header class="fixed-top">) - make background blur behind -->
-			<div class="site-head-container">
-				<div class="site-head general-wrapper">
+			<div class="site-head-container on-scroll">
+				<div id="site-head" class="general-wrapper">
 					<!-- temporary - transition from larger h1 below. Will this link to homepage, somewhere else, or not at all? -->
-					<h1>Matthew Meade<span class="text-color-purple">.</span></h1>
+					<h1 id="site-title">Matthew Meade<span class="text-color-purple">.</span></h1>
 					
 					<nav class="main-nav sans-serif-font">
 						<a class="nav-link" href="#">
@@ -40,9 +38,11 @@
 							<div class="nav-item">About me</div>
 						</a>
 						<a class="nav-link" href="#">
+							<!-- add "new" tag -->
 							<div class="nav-item">Portfolio</div>
 						</a>
 						<a class="nav-link" href="#">
+							<!-- add "new" tag -->
 							<div class="nav-item">Blog</div>
 						</a>
 						<a class="nav-link" href="#">
@@ -93,7 +93,6 @@
 				<div class="attrs-featured-container">
 					<!-- show 3-5 icons here of specialisations, core strengths, and primary technical skills -->
 					<!-- for example, software development, web technologies, APIs, problem solving skills, junior developer, aspirations? -->
-					<!-- hide when the user is using the search box -->
 					<div class="attr-featured fade-in-down">
 						<hgroup>
 							<i class="attr-icon fa-brands fa-microsoft"></i>
@@ -136,26 +135,8 @@
 					</div>
 				</div>
 
-				<div class="about-nav-container" style="display: none">
-					<!-- auto-switch to "Skills & qualities" when the user is using the search box -->
-					<nav class="abt-nav sans-serif-font">
-						<a class="nav-link" href="#">
-							<div class="nav-item nav-highlight">About me</div>
-						</a>
-						<a class="nav-link" href="#">
-							<div class="nav-item">Skills & qualities</div>
-						</a>
-						<a class="nav-link" href="#">
-							<div class="nav-item">Experience</div>
-						</a>
-						<a class="nav-link" href="#">
-							<div class="nav-item">Education</div>
-						</a>
-					</nav>
-				</div>
-
-				<div class="about-container">
-					<div style="border: 2px solid #777; float: left;height: 800px;width: 500px;box-sizing: border-box;margin-right: 100px;"></div>
+				<div class="about-container clearfix">
+					<div style="border: 2px solid #777; float: left;height: 800px;width: 500px;margin-right: 100px;"></div>
 					
 					<hgroup>
 						<h1>About me<span class="text-color-purple">.</span></h1>
@@ -253,7 +234,99 @@
 			<div class="attrs-container general-wrapper">
 				<!-- show only a few (4, 6, or 8) strengths (most confident attributes), with a view more button at the bottom to expand the page with more attributes (ranked - show best first) -->
 				<!-- show a list of tags recognised from the search, minimum 2-3 characters -->
-				 <p>Hello world</p>
+				<div class="attr-tile">
+					<i class="attr-tile-icon fa-solid fa-people-group"></i>
+					<hr class="attr-tile-vbreak" />
+					
+					<div class="attr-tile-content">
+						<div class="attr-tile-head">
+							<h3 style="font-size: 1.5em;margin: 0;">Teamwork</h3>
+	
+							<ul class="attrs-tag-list" style="margin: 0;">
+								<li class="attrs-search-tag" style="background-color: #7a5d06;">transferable skills</li>
+								<li class="attrs-search-tag">teamwork</li>
+							</ul>
+						</div>
+						
+						<p style="color: #bbb;">Hello World</p>
+					</div>
+				</div>
+
+				<div class="attr-tile">
+					<i class="attr-tile-icon fa-solid fa-business-time"></i>
+					<hr class="attr-tile-vbreak" />
+					
+					<div class="attr-tile-content">
+						<div class="attr-tile-head">
+							<h3 style="font-size: 1.5em;margin: 0;">Time management</h3>
+	
+							<ul class="attrs-tag-list" style="margin: 0;">
+								<li class="attrs-search-tag" style="background-color: #7a5d06;">transferable skills</li>
+								<li class="attrs-search-tag">time management</li>
+							</ul>
+						</div>
+						
+						<p style="color: #bbb;">Hello World</p>
+					</div>
+				</div>
+
+				<div class="attr-tile">
+					<i class="attr-tile-icon fa-solid fa-puzzle-piece"></i>
+					<hr class="attr-tile-vbreak" />
+					
+					<div class="attr-tile-content">
+						<div class="attr-tile-head">
+							<h3 style="font-size: 1.5em;margin: 0;">Problem solving</h3>
+	
+							<ul class="attrs-tag-list" style="margin: 0;">
+								<li class="attrs-search-tag" style="background-color: #7a5d06;">transferable skills</li>
+								<li class="attrs-search-tag">problem solving</li>
+							</ul>
+						</div>
+						
+						<p style="color: #bbb;">Hello World</p>
+					</div>
+				</div>
+
+				<div class="attr-tile">
+					<i class="attr-tile-icon fa-solid fa-lightbulb"></i>
+					<hr class="attr-tile-vbreak" />
+					
+					<div class="attr-tile-content">
+						<div class="attr-tile-head">
+							<h3 style="font-size: 1.5em;margin: 0;">Critical thinking</h3>
+	
+							<ul class="attrs-tag-list" style="margin: 0;">
+								<li class="attrs-search-tag" style="background-color: #7a5d06;">transferable skills</li>
+								<li class="attrs-search-tag">critical thinking</li>
+							</ul>
+						</div>
+						
+						<p style="color: #bbb;">Hello World</p>
+					</div>
+				</div>
+
+				<div class="attr-tile">
+					<i class="attr-tile-icon fa-solid fa-code"></i>
+					<hr class="attr-tile-vbreak" />
+					
+					<div class="attr-tile-content">
+						<div class="attr-tile-head">
+							<h3 style="font-size: 1.5em;margin: 0;">HTML &amp; CSS</h3>
+	
+							<ul class="attrs-tag-list" style="margin: 0;">
+								<li class="attrs-search-tag" style="background-color: #065d7a;">technical skills</li>
+								<li class="attrs-search-tag">Web</li>
+								<li class="attrs-search-tag">HTML</li>
+								<li class="attrs-search-tag">CSS</li>
+							</ul>
+						</div>
+						
+						<p style="color: #bbb;">Hello World</p>
+					</div>
+				</div>
+
+				<button title="show more" type="submit" class="nav-btn-lt-lrg" style="display: block;margin: 0 auto;padding: 10px 2em;font-size: 1.4em">Show more</button>
 			</div>
 		</main>
 		
@@ -280,7 +353,7 @@
 						<div class="foot-nav-row">
 							<a class="nav-button nav-btn-lt-sml" href="#">Download CV</a>
 							<a class="nav-icon fa-brands fa-linkedin" href="https://www.linkedin.com/in/matthew-meade-97a737b2/" target="_blank"></a>
-							<a class="nav-icon fa-brands fa-x-twitter" href="https://x.com/MatthewMeade4" target="_blank"></a>
+							<!-- <a class="nav-icon fa-brands fa-x-twitter" href="https://x.com/MatthewMeade4" target="_blank"></a> -->
 							<a class="nav-icon fa-brands fa-github" href="https://github.com/TitaN655" target="_blank"></a>
 						</div>
 					</nav>

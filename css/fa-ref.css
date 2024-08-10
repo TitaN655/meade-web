@@ -56,3 +56,23 @@
 .fa-chevron-down::before {
   content: '\f078';
 }
+
+.fa-people-group::before {
+  content: '\e533';
+}
+
+.fa-business-time::before {
+  content: '\f64a';
+}
+
+.fa-puzzle-piece::before {
+  content: '\f12e';
+}
+
+.fa-lightbulb::before {
+  content: '\f0eb';
+}
+
+.fa-code::before {
+  content: '\f121';
+}
